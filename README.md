@@ -2,6 +2,13 @@
 
 A strategic board game implementation with AI players using Minimax and Alpha-Beta pruning algorithms using Prolog.
 
+## 🎲 About the Game
+
+Hex is a two-player abstract strategy board game in which players attempt to connect opposite sides of a rhombus-shaped board made of hexagonal cells. The game was invented by mathematician and poet Piet Hein in 1942 and later rediscovered and popularized by John Nash.
+
+
+[Learn more about Hex on Wikipedia](https://en.wikipedia.org/wiki/Hex_(board_game))
+
 ## 📋 Features
 
 ### Version 1.0.0
