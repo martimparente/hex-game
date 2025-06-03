@@ -97,8 +97,8 @@ legal_moves(Pos, Pos1) :-
     
 % Calculates the next Player to Move by counting the number of Pieces on the Board
 get_next_player(Board, Player) :-
-    count_pieces(Board, '\u2b22', WhiteCount),
-    count_pieces(Board, '\u2b21', BlackCount),
+    count_pieces(Board, 'O', WhiteCount),
+    count_pieces(Board, 'X', BlackCount),
     (WhiteCount > BlackCount ->
         Player = 'BLACK', !
         ;   % Or
@@ -139,18 +139,18 @@ dfs_each_start_pos(Board, Player, [Start|StartPositions]) :-
 % Get starting positions for a Player (WHITE -> 1st Column, BLACK -> 1st Row)
 start_positions(Board, Player, StartPositions) :-
     piece(Player, Piece),
-    (Piece = '\u2b22' ->
+    (Piece = 'O' ->
         findall([Y, 1], (nth1(Y, Board, Row), nth1(1, Row, Piece)), StartPositions)     
     ;   %OR  
         findall([1, X], (nth1(1, Board, Row), nth1(X, Row, Piece)), StartPositions)     
     ).
 
 % Get players pieces chars
-piece('BLACK', '\u2b21').       % ⬡
-piece('WHITE', '\u2b22').       % ⬢
-piece('BLACK_CPU', '\u2b21').   % ⬡
-piece('WHITE_CPU', '\u2b22').   % ⬢
-piece('EMPTY', '.').            % .
+piece('BLACK', 'X').       % ⬡
+piece('WHITE', 'O').       % ⬢
+piece('BLACK_CPU', 'X').   % ⬡
+piece('WHITE_CPU', 'O').   % ⬢
+piece('EMPTY', '.').       % .
 % Get opponent
 get_opponent('WHITE', 'BLACK').
 get_opponent('BLACK', 'WHITE').

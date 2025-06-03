@@ -10,7 +10,6 @@
 menu() :- 
     print_gamemode_options(),                           % Print Game Mode options
     read(OptionMode),                                   % Read option from user
-    print_dialog('2222'),
     select_gamemode(OptionMode, Player1, Player2),      % Select Game Mode
     print_algo_options(),                               % Print Algorithm options
     read(OptionAlgo),                                   % Read option from user
@@ -23,9 +22,8 @@ menu() :-
 % Game Mode options
 %
 print_gamemode_options() :- 
-
     print_dialog('Game Mode'),
-    print_dialog('Always add a period after the selected option'),
+print_dialog('Always add a period after the selected option'),
     write('1 - Player vs Player\n'),
     write('2 - CPU vs Player\n'),
     write('3 - Player vs CPU\n'),
@@ -63,16 +61,16 @@ read_board_size(Size) :-
 
 % Custom UI Messages
 print_dialog(Message) :-
-    write('\n\u2b22 \u2b21 \u2b22  '),
+    write('\n* * *  '),
     write(Message),
-    write('  \u2b22 \u2b21 \u2b22\n').
+    write('  * * *\n').
 
 print_winner(Player) :-
-    write('\n\u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \n'),
-    write(' \u2b22 \u2b21 '), write(Player), write(' WINS! \u2b22 \u2b21 \n'),
-    write('\u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22\n\n').
+    write('\n* * * * * * * * * *\n'),
+    write(' * * '), write(Player), write(' WINS! * * \n'),
+    write('* * * * * * * * * *\n\n').
 
 print_welcome() :-
-    write('\n\u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22\n'),
-    write(' \u2b22 \u2b21 \u2b22 HEX \u2b21 \u2b22 \u2b21 \n'),
-    write('\u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21 \u2b22 \u2b21\n').
+    write('\n* * * * * * * * * *\n'),
+    write(' * * * HEX * * * \n'),
+    write('* * * * * * * * * *\n').
